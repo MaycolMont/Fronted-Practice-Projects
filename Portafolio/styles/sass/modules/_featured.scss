@@ -1,0 +1,106 @@
+@use '../other/utils' as *;
+
+.featured__title {
+    font-size: $font-size-2xl;
+    color: $clr-light;
+    @include responsive-font($font-size-3xl, $font-size-4xl, $font-size-5xl);
+}
+
+.featured__subtitle {
+    font-size: $font-size-sm;
+    color: $clr-indigo;
+    text-transform: capitalize;
+    font-weight: 400;
+    @include responsive-font($font-size-base, $font-size-lg, $font-size-xl)
+}
+
+.featured__description {
+    max-width: 60ch;
+    color: $clr-slate600;
+    font-size: $font-size-sm;
+    margin: 1rem 0;
+    @include responsive-font($font-size-base, $font-size-lg, $font-size-xl);
+    @include xs {
+        margin: 1.5rem 0;
+    }
+    @include xl {
+        margin: 2rem 0;
+    }
+}
+
+.featured__title--wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.featured__link {
+    @include set-svg($clr-indigo, $size-2xl);
+    @include xs {
+        @include simetric-size($size-3xl)
+    }
+    @include lg {
+        @include simetric-size($size-4xl)
+    }
+    @include xl {
+        @include simetric-size($size-5xl)
+    }
+}
+
+.featured__label {
+    font-size: $font-size-base;
+    text-transform: capitalize;
+    margin-bottom: 0.25rem;
+    @extend %responsive-font-base;
+}
+
+.featured__info {
+    font-size: $font-size-sm;
+    color: $clr-slate600;
+    text-transform: capitalize;
+    @include responsive-font($font-size-base, $font-size-lg, $font-size-xl)
+}
+
+.featured__info-container {
+    div {
+        flex: 1 0 15rem;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.featured__img-container {
+    margin-top: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    @include sm {
+        grid-template-columns: repeat(auto-fit, minmax(31.25rem, 1fr));
+        margin-top: 1.5rem;
+        gap: 1.5rem;
+    }
+    @include xl {
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+}
+
+.featured__img-wrapper {
+    position: relative
+}
+
+.featured__img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(79, 70, 299, 0.4);
+    z-index: 1;
+    transition: background-color .3s;
+    @include simetric-size(100%)
+}
+
+.featured__img-wrapper:hover::after {
+    background-color: rgba(79, 70, 299, 0.1);
+}

@@ -1,0 +1,190 @@
+@use '../other/utils' as *;
+
+.work {
+    text-align: center;
+
+    &__title {
+        font-size: $font-size-2xl;
+        color: $clr-light;
+        @include responsive-font($font-size-3xl, $font-size-4xl, $font-size-5xl)
+    }
+
+    &__description {
+        max-width: 60ch;
+        font-size: $font-size-sm;
+        color: $clr-slate600;
+        margin: 1rem auto;
+        @include responsive-font($font-size-base, $font-size-lg, $font-size-xl);
+        @include xs {
+            margin: 1.5rem auto;
+        }
+        @include xl {
+            margin: 2rem auto;
+        }
+    }
+    
+    &__project {
+        margin-bottom: 5rem;
+        @include sm {
+            margin-bottom: 0;
+            padding: 0 1rem;
+        }
+
+        &-title {
+            font-size: $font-size-base;
+            margin-bottom: 1rem;
+            @include xs {
+                font-size: $font-size-lg;
+                margin-bottom: 1.5rem;
+            }
+            @include sm {
+                display: none;
+            }
+        }
+
+        &-subtitle {
+            display: none;
+            @include sm {
+                display: block;
+            }
+            @extend %responsive-font-base
+        }
+
+        &-description1 {
+            font-size: $font-size-sm;
+            color: $clr-slate600;
+            margin: 1rem 0;
+            @extend %responsive-font-base;
+            @include xs {
+                margin: 1.5rem 0
+            }
+            @include md {
+                font-size: $font-size-sm;
+            }
+            @include lg {
+                font-size: $font-size-base;
+            }
+            @include xl {
+                font-size: $font-size-lg;
+            }
+        }
+        
+        &-description2 {
+            font-size: $font-size-sm;
+            color: $clr-slate400;
+            margin-bottom: 1rem;
+            @extend %responsive-font-base;
+            @include xs {
+                margin: 1.5rem 0
+            }
+            @include md {
+                font-size: $font-size-sm;
+            }
+            @include lg {
+                font-size: $font-size-base;
+            }
+            @include xl {
+                font-size: $font-size-lg;
+            }
+        }
+
+        &-btn {
+            font-size: $font-size-sm;
+            @include md {
+                font-size: $font-size-sm;
+            }
+            @include lg {
+                font-size: $font-size-base;
+            }
+            @include xl {
+                font-size: $font-size-lg;
+            }
+        }
+
+        &-container {
+            @include sm {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                place-items: center;
+                grid-template-areas: 
+                    'image1 content1'
+                    'content2 image2'
+                    'image3 content3'
+                    'content4 image4'
+                    'image5 content5'
+                    'content6 image6'
+                    ;
+            }
+
+            @include lg {
+                width: 80%;
+                margin: 0 auto
+            }
+
+            @include xl {
+                width: 70%
+            }
+        }
+    }
+    
+    &__img-wrapper {
+        @include colored-img($clr-indigo, .4, .3)
+    }
+
+    &__project--last {
+        margin-bottom: 0;
+    }
+
+    &__image {
+        &1 {
+            grid-area: image1;
+        }
+        
+        &2 {
+            grid-area: image2;
+        }
+        
+        &3 {
+            grid-area: image3;
+        }
+        
+        &4 {
+            grid-area: image4;
+        }
+        
+        &5 {
+            grid-area: image5;
+        }
+        
+        &6 {
+            grid-area: image6;
+        }
+    }
+    
+    &__content {
+        &1 {
+            grid-area: content1;
+        }
+        
+        &2 {
+            grid-area: content2;
+        }
+        
+        &3 {
+            grid-area: content3;
+        }
+        
+        &4 {
+            grid-area: content4;
+        }
+        
+        &5 {
+            grid-area: content5;
+        }
+        
+        &6 {
+            grid-area: content6;
+        }
+    }
+
+}

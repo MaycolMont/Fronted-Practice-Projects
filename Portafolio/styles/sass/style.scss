@@ -1,0 +1,43 @@
+@use 'base/base';
+@use 'other/utils' as *;
+@use 'modules/header';
+@use 'modules/components';
+@use 'modules/hero';
+@use 'modules/about';
+@use 'modules/featured';
+@use 'modules/work';
+@use 'modules/contact';
+@use 'modules/footer';
+@use 'modules/mobile-nav';
+
+
+body {
+    font-family: 'General Sans', sans-serif;
+    background-color: $clr-dark;
+    color: $clr-light
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        $clr-dark: #070a13;
+        $clr-light: #f1f5f9;
+        $clr-slate400: #1e293b;
+        $clr-slate600: #1e293b;
+        $clr-slate800: #1e293b;
+    }
+}
+
+button {
+    display: inline-block;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+a {
+    color: $clr-rose
+}
+
+strong {
+    color: $clr-indigo
+}

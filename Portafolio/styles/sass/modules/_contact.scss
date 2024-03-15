@@ -1,0 +1,69 @@
+@use '../other/utils' as *;
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+
+    @include xs {
+        gap: 1.5rem;
+    }
+
+    @include xl {
+        gap: 2rem;
+    }
+
+    &__title {
+        font-size: $font-size-2xl;
+        color: $clr-light;
+        text-transform: capitalize;
+
+        @include xs {
+            font-size: $font-size-3xl;
+        }
+
+        @include lg {
+            font-size: $font-size-4xl
+        }
+        
+        @include xl {
+            font-size: $font-size-5xl
+        }
+    }
+
+    &__description {
+        font-size: $font-size-sm;
+        color: $clr-slate600;
+        max-width: 60ch;
+
+        @include xs {
+            font-size: $font-size-base;
+        }
+
+        @include lg {
+            font-size: $font-size-lg
+        }
+
+        @include xl {
+            font-size: $font-size-xl
+        }
+    }
+
+    &__btn {
+        font-size: $font-size-sm;
+
+        @include xs {
+            font-size: $font-size-base;
+        }
+
+        @include lg {
+            font-size: $font-size-lg
+        }
+
+        @include xl {
+            font-size: $font-size-xl
+        }
+    }
+}

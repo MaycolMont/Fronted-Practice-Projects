@@ -1,0 +1,110 @@
+@use '../other/utils' as *;
+
+.hero {
+    text-align: center;
+    @include flex-container(column);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.hero__img {
+    border-radius: 50%;
+    @include simetric-size(6rem);
+}
+
+.hero__subtitle {
+    color: $clr-rose;
+    font-size: $font-size-base;
+}
+
+.hero__title {
+    text-transform: uppercase;
+    color: $clr-slate400;
+    font-size: $font-size-4xl;
+    letter-spacing: -0.05rem;
+}
+
+.hero__description {
+    max-width: 60ch;
+    font-size: $font-size-sm;
+    color: $clr-slate600;
+}
+
+.hero__btn {
+    text-transform: capitalize;
+    font-size: $font-size-sm;
+}
+
+@media (min-width: $breakpoint-xs) {
+    .hero {
+        gap: 1.5rem;
+    }
+
+    .hero__img {
+        @include simetric-size(6.5rem)
+    }
+
+    .hero__subtitle {
+        font-size: $font-size-lg;
+    }
+
+    .hero__title {
+        font-size: $font-size-5xl;
+    }
+
+    .hero__description {
+        font-size: $font-size-base;
+    }
+
+    .hero__btn {
+        font-size: $font-size-base;
+    }
+}
+
+@media (min-width: $breakpoint-md) {
+    .hero__img {
+        @include simetric-size(8rem)
+    }
+
+    .hero__subtitle {
+        font-size: $font-size-2xl;
+    }
+
+    .hero__title {
+        font-size: $font-size-7xl;
+    }
+
+    .hero__description {
+        font-size: $font-size-lg;
+    }
+
+    .hero__btn {
+        font-size: $font-size-lg;
+    }
+}
+
+@media (min-width: $breakpoint-lg) {
+    .hero {
+        gap: 2rem;
+    }
+
+    .hero__img {
+        @include simetric-size(10rem)
+    }
+
+    .hero__subtitle {
+        font-size: $font-size-4xl;
+    }
+
+    .hero__title {
+        font-size: $font-size-9xl;
+    }
+
+    .hero__description {
+        font-size: $font-size-xl;
+    }
+
+    .hero__btn {
+        font-size: $font-size-xl;
+    }
+}

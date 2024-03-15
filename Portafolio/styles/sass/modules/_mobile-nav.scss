@@ -1,0 +1,51 @@
+@use '../other/utils' as *;
+
+.mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: $clr-dark;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    &__menu {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        flex-direction: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__link {
+        font-size: $font-size-sm;
+        font-weight: 600;
+        color: $clr-slate600;
+        letter-spacing: -0.05rem;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $clr-rose
+        }
+
+        &-line {
+            border: 1px solid $clr-slate800;
+            padding-right: 1.5rem;
+        }
+    }
+
+    &__sun {
+        display: block;
+        @include set-svg($clr-slate600, $size-xl)
+    }
+
+    &__btn {
+        font-size: $font-size-sm;
+    }
+
+}

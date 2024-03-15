@@ -1,0 +1,47 @@
+@use '../other/utils' as *;
+
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    text-decoration: none ;
+    letter-spacing: -0.05rem;
+    background-color: $clr-rose;
+    color: $clr-light;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    @include box-shadow1($shadow-clr: rgba(255, 29, 72, 0.5));
+    transition: transform .3s, box-shadow .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    @include box-shadow1($shadow-clr: rgba(255, 29, 72, 0.25), $blur: 0.9rem)
+}
+
+.container {
+    width: 100%;
+    @include margin-x(auto);
+    @include padding-x(0.5rem);
+    @include xs {
+        max-width: $breakpoint-xs;
+    }
+    @include sm {
+        max-width: $breakpoint-sm;
+    }
+    @include md {
+        max-width: $breakpoint-md;
+    }
+    @include lg {
+        max-width: $breakpoint-lg;
+    }
+    @include xl {
+        max-width: $breakpoint-xl;
+    }
+    @include txl {
+        max-width: $breakpoint-txl;
+    }
+}
+
+.section {
+    margin-top: 5rem;
+}

@@ -1,0 +1,13 @@
+@use '../other/utils' as *;
+
+.footer {
+    &__title {
+        font-size: $font-size-xs;
+        font-weight: 400;
+        text-align: center;
+        color: $clr-slate600;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        user-select: none;
+    }
+}

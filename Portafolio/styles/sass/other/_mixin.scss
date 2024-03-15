@@ -1,0 +1,131 @@
+@use '../base/variables' as *;
+
+@mixin flex-container($direction, $just: center, $align: center, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $just;
+    align-items: $align
+};
+
+@mixin grid-container() {
+
+};
+
+@mixin margin-x($measure) {
+    margin-left: $measure;
+    margin-right: $measure;
+};
+
+@mixin margin-y($measure) {
+    margin-top: $measure;
+    margin-bottom: $measure;
+};
+
+@mixin padding-x($measure) {
+    padding-left: $measure;
+    padding-right: $measure;
+};
+
+@mixin padding-y($measure) {
+    padding-top: $measure;
+    padding-bottom: $measure;
+};
+
+@mixin simetric-size($measure) {
+    width: $measure;
+    height: $measure;
+}
+
+@mixin show-box{
+    border: 1px solid aliceblue;
+    background-color: aquamarine;
+};
+
+@mixin box-shadow1($shadow-clr, $blur: 0.65rem) { 
+    box-shadow: 0 $blur ($blur*2) $shadow-clr, 0 (0.6*$blur) (0.6*$blur) $shadow-clr, 0 0 ($blur*10) (-$blur) #e11d48;
+};
+
+@mixin set-svg($clr, $size) {
+    color: $clr;
+    @include simetric-size($size)
+};
+
+
+
+@mixin xs {
+    @media (min-width: $breakpoint-xs) {
+        @content
+    }
+};
+
+@mixin sm {
+    @media (min-width: $breakpoint-sm) {
+        @content
+    }
+};
+
+@mixin md {
+    @media (min-width: $breakpoint-md) {
+        @content
+    }
+};
+
+@mixin lg {
+    @media (min-width: $breakpoint-lg) {
+        @content
+    }
+};
+
+@mixin xl {
+    @media (min-width: $breakpoint-xl) {
+        @content
+    }
+};
+
+@mixin txl {
+    @media (min-width: $breakpoint-txl) {
+        @content
+    }
+};
+
+
+@mixin responsive-font($sm-size, $lg-size, $xl-size) {
+    @include xs {
+        font-size: $sm-size;
+    }
+    @include lg { 
+        font-size: $lg-size;
+    }
+    @include xl {
+        font-size: $xl-size;
+    }
+};
+
+%responsive-font-base {
+    @include responsive-font($font-size-base, $font-size-lg, $font-size-xl)
+};
+
+@mixin colored-img ($clr, $alpha, $alpha-hover){
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($clr, $alpha);
+        z-index: 1;
+        transition: background-color .3s;
+        @include simetric-size(100%)
+    }
+
+    &:hover::after {
+        background-color: rgba($clr, $alpha-hover);
+    }
+}
+
+@mixin grid-columns-responsive($min-width) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+}
