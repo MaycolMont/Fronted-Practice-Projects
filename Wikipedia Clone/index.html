@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wikipedia Clone</title>
+  </head>
+  <body>
+    <header class="header container">
+      <div class="header__start">
+        <button class="header__bars">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>          
+        </button>
+        <a class="header__logo-container">
+          <img class="header__logo" src="/wikipedia.png" alt="page-logo">
+          <div class="header__logo-subcontainer">
+            <img src="/wikipedia-wordmark-en.svg" alt="">
+            <img src="/wikipedia-tagline-es.svg" alt="">
+          </div>
+        </a>
+      </div>
+      <div class="header__end">
+        <input class="header__search-input" type="text">
+        <div class="header__end-menu">
+          <button class="header__search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+          </button>
+          <div class="header__end-options">
+            <a href="#">Crear cuenta</a>
+            <a href="#">Acceder</a>
+          </div>
+          <button class="header__options-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="main container"></main>
+    <footer class="footer container"></footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
