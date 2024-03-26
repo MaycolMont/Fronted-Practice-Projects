@@ -131,9 +131,6 @@ th[scope='row'] {
 }
 
 @media (min-width: 23.4375rem) {
-    body {
-        padding: 5rem 1rem
-    }
 
     .recipe {
         border-radius: 1rem;
